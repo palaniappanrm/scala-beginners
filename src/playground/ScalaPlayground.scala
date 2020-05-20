@@ -4,5 +4,5 @@ package playground
   * Created by Daniel.
   */
 object ScalaPlayground extends App {
-  println("Hello, Scala!")
+  println("Hello, Scala!" + args)
 }

@@ -26,7 +26,7 @@ object HandlingFailure extends App {
   }
 
   // utilities
-  println(potentialFailure.isSuccess)
+  println(anotherPotentialFailure.isSuccess)
 
   // orElse
   def backupMethod(): String = "A valid result"

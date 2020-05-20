@@ -9,6 +9,7 @@ object CaseClasses extends App {
     equals, hashCode, toString
    */
 
+  // for case class, class parameters are the object fields
   case class Person(name: String, age: Int)
 
   // 1. class parameters are fields
@@ -29,7 +30,8 @@ object CaseClasses extends App {
 
   // 5. CCs have companion objects
   val thePerson = Person
-  val mary = Person("Mary", 23)
+  val mary = thePerson("Mary", 23)
+  print(mary)
 
   // 6. CCs are serializable
   // Akka
@@ -39,6 +41,21 @@ object CaseClasses extends App {
   case object UnitedKingdom {
     def name: String = "The UK of GB and NI"
   }
+
+  println(UnitedKingdom.name)
+
+  // won't work bec case class need ()
+  /*case class UnitedKingdom {
+    def name: String = "The UK of GB and NI"
+  }
+
+  println(UnitedKingdom.name)*/
+
+  class UnitedKingdom {
+    def name: String = "The UK of GB and NI"
+  }
+
+  println(UnitedKingdom.name)
 
   /*
     Expand MyList - use case classes and case objects

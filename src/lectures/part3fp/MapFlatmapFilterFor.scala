@@ -48,9 +48,9 @@ object MapFlatmapFilterFor extends App {
   } println(n)
 
   // syntax overload
-  list.map { x =>
+  println(list.map { x =>
     x * 2
-  }
+  } )
 
   /*
     1.  MyList supports for comprehensions?

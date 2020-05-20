@@ -11,7 +11,7 @@ object Options extends App {
   val noOption: Option[Int] = None
 
   println(myFirstOption)
-
+  println(noOption.map(_ * 2))
   // WORK with unsafe APIs
   def unsafeMethod(): String = null
   //  val result = Some(null) // WRONG
@@ -21,12 +21,12 @@ object Options extends App {
   // chained methods
   def backupMethod(): String = "A valid result"
   val chainedResult = Option(unsafeMethod()).orElse(Option(backupMethod()))
-
+  println(chainedResult)
   // DESIGN unsafe APIs
   def betterUnsafeMethod(): Option[String] = None
   def betterBackupMethod(): Option[String] = Some("A valid result")
   val betterChainedResult = betterUnsafeMethod() orElse betterBackupMethod()
-
+  println(betterChainedResult)
 
   // functions on Options
   println(myFirstOption.isEmpty)
@@ -49,6 +49,7 @@ object Options extends App {
   )
 
   class Connection {
+    // method that returns string
     def connect = "Connected" // connect to some server
   }
   object Connection {
@@ -62,6 +63,8 @@ object Options extends App {
   // try to establish a connection, if so - print the connect method
   val host = config.get("host")
   val port = config.get("port")
+  println(host)
+  println(port)
   /*
     if (h != null)
       if (p != null)

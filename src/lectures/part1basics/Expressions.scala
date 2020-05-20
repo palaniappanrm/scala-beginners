@@ -35,12 +35,15 @@ object Expressions extends App {
     println(i)
     i += 1
   }
+  println(i)
+  println(aWhile)
 
   // NEVER WRITE THIS AGAIN.
 
   // EVERYTHING in Scala is an Expression!
 
-  val aWeirdValue = (aVariable = 3) // Unit === void
+  val aWeirdValue = aVariable = 3 // Unit === void
+  println(aVariable)
   println(aWeirdValue)
 
   // side effects: println(), whiles, reassigning
@@ -53,7 +56,7 @@ object Expressions extends App {
 
     if (z > 2) "hello" else "goodbye"
   }
-
+  println(aCodeBlock)
   // 1. difference between "hello world" vs println("hello world")?
   // 2.
 

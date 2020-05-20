@@ -14,6 +14,7 @@ object PackagingAndImports extends App {
   val writer = new Writer("Daniel", "RockTheJVM", 2018)
 
   // import the package
+//  val princess = new playground.Cinderella
   val princess = new Princess  // playground.Cinderella = fully qualified name
 
   // packages are in hierarchy

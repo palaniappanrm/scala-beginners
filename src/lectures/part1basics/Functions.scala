@@ -26,11 +26,15 @@ object Functions extends App {
 
   def aFunctionWithSideEffects(aString: String): Unit = println(aString)
 
+  println(aFunctionWithSideEffects("palani"))
+
   def aBigFunction(n: Int): Int = {
     def aSmallerFunction(a: Int, b: Int): Int = a + b
 
     aSmallerFunction(n, n-1)
   }
+
+  println(aBigFunction(2))
 
   /*
     1.  A greeting function (name, age) => "Hi, my name is $name and I am $age years old."

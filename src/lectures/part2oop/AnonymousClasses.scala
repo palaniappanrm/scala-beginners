@@ -24,13 +24,19 @@ object AnonymousClasses extends App {
 
   println(funnyAnimal.getClass)
 
+  // can't have same name for variable and method
   class Person(name: String) {
+//    val sayHi: String = "wild"
     def sayHi: Unit = println(s"Hi, my name is $name, how can I help?")
   }
 
   val jim = new Person("Jim") {
     override def sayHi: Unit = println(s"Hi, my name is Jim, how can I be of service?")
   }
+
+  val palani = new Person("palani")
+//  don't need to call method with () if it doesn't accept any param
+  palani.sayHi
 
   /*
     1.  Generic trait MyPredicate[-T] with a little method test(T) => Boolean

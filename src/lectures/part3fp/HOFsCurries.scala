@@ -19,7 +19,7 @@ object HOFsCurries extends App {
     else nTimes(f, n-1, f(x))
 
   val plusOne = (x: Int) => x + 1
-  println(nTimes(plusOne, 10, 1))
+  println(nTimes(plusOne, 1, 1))
 
   // ntb(f,n) = x => f(f(f...(x)))
   // increment10 = ntb(plusOne, 10) = x => plusOne(plusOne....(x))
@@ -28,7 +28,7 @@ object HOFsCurries extends App {
     if (n <= 0) (x: Int) => x
     else (x: Int) => nTimesBetter(f, n-1)(f(x))
 
-  val plus10 = nTimesBetter(plusOne, 10)
+  val plus10 = nTimesBetter(plusOne, 1)
   println(plus10(1))
 
   // curried functions

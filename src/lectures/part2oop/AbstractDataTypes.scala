@@ -12,11 +12,11 @@ object AbstractDataTypes extends App {
   }
 
   class Dog extends Animal {
-    override val creatureType: String = "Canine"
+//    override val creatureType: String = "Canine"
     def eat: Unit = println("crunch crunch")
   }
 
-  // traits
+  // traits = interfaces
   trait Carnivore {
     def eat(animal: Animal): Unit
     val preferredMeal: String = "fresh meat"

@@ -19,7 +19,7 @@ object Sequences extends App {
   val aRange: Seq[Int] = 1 until 10
   aRange.foreach(println)
 
-  (1 to 10).foreach(x => println("Hello"))
+  (1 to 10).foreach(x => println(x + "Hello"))
 
   // lists
   val aList = List(1,2,3)

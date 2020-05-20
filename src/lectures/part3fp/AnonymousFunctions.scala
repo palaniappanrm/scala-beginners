@@ -14,6 +14,10 @@ object AnonymousFunctions extends App {
   // no params
   val justDoSomething: () => Int = () => 3
 
+  def doubling : Unit = println("Hello")
+
+  doubling
+
   // careful
   println(justDoSomething) // function itself
   println(justDoSomething()) // call
@@ -22,6 +26,8 @@ object AnonymousFunctions extends App {
   val stringToInt = { (str: String) =>
     str.toInt
   }
+
+  println(stringToInt("5"))
 
   // MOAR syntactic sugar
   val niceIncrementer: Int => Int = _ + 1 // equivalent to x => x + 1
