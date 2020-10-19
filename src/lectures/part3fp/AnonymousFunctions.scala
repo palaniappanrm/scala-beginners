@@ -29,7 +29,7 @@ object AnonymousFunctions extends App {
 
   println(stringToInt("5"))
 
-  // MOAR syntactic sugar
+  // MORE syntactic sugar
   val niceIncrementer: Int => Int = _ + 1 // equivalent to x => x + 1
   val niceAdder: (Int, Int) => Int = _ + _ // equivalent to (a,b) => a + b
 
@@ -38,6 +38,6 @@ object AnonymousFunctions extends App {
     2.  Rewrite the "special" adder as an anonymous function
    */
 
-  val superAdd = (x: Int) => (y: Int) => x + y
+  val superAdd = (x: Int) => (y: Int) => niceAdder(x,y)
   println(superAdd(3)(4))
 }

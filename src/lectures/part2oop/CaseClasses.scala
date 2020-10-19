@@ -13,7 +13,7 @@ object CaseClasses extends App {
   case class Person(name: String, age: Int)
 
   // 1. class parameters are fields
-  val jim = new Person("Jim", 34)
+  val jim = Person("Jim", 34)
   println(jim.name)
 
   // 2. sensible toString
@@ -21,7 +21,7 @@ object CaseClasses extends App {
   println(jim)
 
   // 3. equals and hashCode implemented OOTB
-  val jim2 = new Person("Jim", 34)
+  val jim2 = Person("Jim", 34)
   println(jim == jim2)
 
   // 4. CCs have handy copy method
@@ -52,10 +52,13 @@ object CaseClasses extends App {
   println(UnitedKingdom.name)*/
 
   class UnitedKingdom {
-    def name: String = "The UK of GB and NI"
+    def place: String = "The UK of GB and NI"
   }
 
   println(UnitedKingdom.name)
+
+//  val country = new UnitedKingdom
+//  println(country.name)
 
   /*
     Expand MyList - use case classes and case objects

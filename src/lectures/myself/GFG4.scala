@@ -1,3 +1,4 @@
+
 // private constructors
 
 //In a single class, we are allowed to create one or more than one auxiliary constructors,
@@ -34,7 +35,7 @@ object SingletonTest extends App
 {
 
   // this won't compile 
-  // val gfg = new GFG 
+//   val gfg = new GFG
   // this works 
   val gfg = GFG.getObject
   println(gfg)

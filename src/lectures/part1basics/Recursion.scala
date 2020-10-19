@@ -66,13 +66,14 @@ object Recursion extends App {
       else if (t <= 1) true
       else isPrimeTailrec(t - 1, n % t != 0 && isStillPrime)
 
-    isPrimeTailrec(n / 2, true)
+    isPrimeTailrec(n / 2, isStillPrime = true)
   }
 
   println(isPrime(2003))
   println(isPrime(629))
 
   def fibonacci(n: Int): Int = {
+    @scala.annotation.tailrec
     def fiboTailrec(i: Int, last: Int, nextToLast: Int): Int =
       if(i >= n) last
       else fiboTailrec(i + 1, last + nextToLast, last)

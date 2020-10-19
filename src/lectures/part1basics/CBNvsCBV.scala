@@ -19,7 +19,7 @@ object CBNvsCBV extends App {
   calledByName(System.nanoTime())
 
   def infinite(): Int = 1 + infinite()
-  def printFirst(x: Int, y: => Int) = println(x)
+  def printFirst(x: Int, y: => Int): Unit = println(x)
 
 //  printFirst(infinite(), 34)
   printFirst(34, infinite())

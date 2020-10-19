@@ -31,7 +31,7 @@ object Inheritance extends App {
   // overriding
   class Dog(override val creatureType: String) extends Animal {
 //    override val creatureType = "domestic"
-    override def eat = {
+    override def eat: Unit = {
       super.eat
       println("crunch, crunch")
     }

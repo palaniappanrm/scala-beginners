@@ -17,13 +17,14 @@ object Generics extends App {
   class MyMap[Key, Value]
 
   val listOfIntegers = new MyList[Int]
+  listOfIntegers.add(4.0f)
   val listOfStrings = new MyList[String]
 
   // generic methods
-  object MyList {
-    def empty[A]: MyList[A] = ???
-  }
-  val emptyListOfIntegers = MyList.empty[Int]
+//  object MyList {
+//    def empty[A]: MyList[A] = ???
+//  }
+//  val emptyListOfIntegers = MyList.empty[Int]
 
   // variance problem
   class Animal
@@ -34,21 +35,34 @@ object Generics extends App {
   class CovariantList[+A]
   val animal: Animal = new Cat
   val animalList: CovariantList[Animal] = new CovariantList[Cat]
-  // animalList.add(new Dog) ??? HARD QUESTION => we return a list of Animals
+//  val animalList: CovariantList[Cat] = new CovariantList[Animal]
+//   animalList.add(new Dog) ??? HARD QUESTION => we return a list of Animals
 
   // 2. NO = INVARIANCE
   class InvariantList[A]
   val invariantAnimalList: InvariantList[Animal] = new InvariantList[Animal]
+//  val invariantAnimalList: InvariantList[Animal] = new InvariantList[Cat]
 
   // 3. Hell, no! CONTRAVARIANCE
   class Trainer[-A]
   val trainer: Trainer[Cat] = new Trainer[Animal]
 
   // bounded types
-  class Cage[A <: Animal](animal: A)
-  val cage = new Cage(new Dog)
+//  class Cage[A: Animal]{
+//    val a:Animal = ???
+//  }
+//  case class Cage(a: Animal)
+//  val animal = new Animal
+//  val cage = new Cage
 
   class Car
+  class Skoda
+
+//  class Test[A: Car](a: Car)
+
+//  new Test(new Car)
+//  val test = new Test(new Car)
+
   // generic type needs proper bounded type
 //  val newCage = new Cage(new Car)
 

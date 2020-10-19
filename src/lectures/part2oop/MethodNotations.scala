@@ -15,7 +15,7 @@ object MethodNotations extends App {
     def apply(): String = s"Hi, my name is $name and I like $favoriteMovie"
     def apply(n: Int): String = s"$name watched $favoriteMovie $n times"
     def learns(thing: String) = s"$name is learning $thing"
-    def learnsScala = this learns "Scala"
+    def learnsScala: String = this learns "Scala"
   }
 
 
@@ -38,6 +38,7 @@ object MethodNotations extends App {
   // prefix notation
   val x = -1  // equivalent with 1.unary_-
   val y = 1.unary_-
+  println(y)
   // unary_ prefix only works with - + ~ !
 
   println(!mary)

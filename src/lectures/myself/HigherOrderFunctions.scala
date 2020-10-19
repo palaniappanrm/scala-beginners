@@ -105,7 +105,7 @@ object HigherOrderFunctions {
   }
 
   // Defined function
-  def callByName(x: => Int) =
+  def callByName(x: Int) =
   {
     println("x1=" + x)
     println("x2=" + x)
